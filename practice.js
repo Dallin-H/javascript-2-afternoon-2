@@ -17,7 +17,7 @@ var arr = [10,20,30];
   Return the first item in the given array.
 */
 
-//Code Here
+let first = (arr) => arr[0];
 
 
 
@@ -32,8 +32,7 @@ var arr = [40,50,60];
   Return the last item in the given array.
 */
 
-//Code Here
-
+let last = (arr) => arr[arr.length -1]
 
 
 ////////// PROBLEM 3 //////////
@@ -47,8 +46,11 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
   Loop through the given array and alert every item in the array.
 */
 
-//Code Here
-
+let looper = (family) => {
+  for (let index = 0; index < family.length; index++) {
+    alert(family[index]);
+  }
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -62,8 +64,11 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
   Loop through the given array backwards alerting every item in the array starting at the end.\
 */
 
-//Code Here
-
+let reversedLooper = (letters) => {
+  for (let index = letters.length -1; index >= 0; index--) {
+    alert(letters[index]);
+  }
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -77,8 +82,15 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
   Return an array that contains the even numbers from the nums array.
 */
 
-//Code Here
-
+let evenFinder = (nums) => {
+  let evens = [];
+  nums.forEach(element => {
+    if(element % 2 === 0) {
+      evens.push(element)
+    }
+  });
+return evens;
+}
 
 
 
@@ -105,8 +117,19 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
   Have divider return an Array with the first item in the array being the evens array (all the even values from numbersArray) and the second item in the Array being the odds array (all the odd values from numbersArray).
 */
 
-//Code Here
-
+let divider = (numbersArray) => {
+  let newArray = [ [], [] ]
+    for (let index = 0; index < numbersArray.length; index++) {
+      const element = numbersArray[index];
+      if(element % 2 === 0) {
+        newArray[0].push(element)
+      }
+      else {
+        newArray[1].push(element)
+      }
+    }
+  return newArray;
+}
 
 
 ////////// PROBLEM 7 //////////
@@ -126,9 +149,13 @@ var getRandomArbitrary = function() {
   If it is, return true, if it's not, return false
 */
 
-//Code Here
-
-
+let finder = (array) => {
+  let randomNum = getRandomArbitrary();
+if(array.includes(randomNum)) {
+  return true;
+}
+return false;
+}
 
 ////////// PROBLEM 8 //////////
 
@@ -155,8 +182,39 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   addItem() --> [];
 */
 
-//Code Here
+let removeItem = (myGroceryList, item) => {
+  let newArray = [];
+  if (myGroceryList == true) {
 
+    for (let i = 0; i < myGroceryList.length; i++) {
+        const element = myGroceryList[i];
+        
+      if (element == item){
+        delete element;
+      }
+      else if (element != item){
+        newArray.push(element)
+      }
+    }
+  } 
+    else if (myGroceryList == false){
+      return newArray = [];
+    }
+    else if (item == false) {
+      return newArray = [];
+    }    
+    return newArray;
+  }
+
+  let addItem = (myGroceryList, item) => {
+    let newList = [];
+    if (myGroceryList == truth) {
+      myGroceryList.push(item)
+    }
+    else if (myGroceryList == false) {
+      return newList;
+    }
+  }
 
 
 ////////// PROBLEM 9 //////////
