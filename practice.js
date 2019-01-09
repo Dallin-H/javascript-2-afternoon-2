@@ -185,18 +185,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 let removeItem = (myGroceryList, item) => {
   let newArray = [];
   if (myGroceryList == true) {
-
     for (let i = 0; i < myGroceryList.length; i++) {
-        const element = myGroceryList[i];
-        
-      if (element == item){
-        delete element;
-      }
-      else if (element != item){
-        newArray.push(element)
+      if (myGroceryList[i] === item){
+
       }
     }
   } 
+
     else if (myGroceryList == false){
       return newArray = [];
     }
@@ -223,8 +218,15 @@ let removeItem = (myGroceryList, item) => {
   Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 */
 
-//Code Here
-
+let maker = () => {
+  let newArray = [];
+  let arrayVal = 0;
+  for (let index = 0; index < 215; index++) {
+    arrayVal++;
+    newArray.push(arrayVal)
+  }
+  return newArray;
+}
 
 
 ////////// PROBLEM 10 //////////
@@ -239,8 +241,14 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
   *Verify your answer is correct. --> [15, 19, 26, 29, 35, 44, 58]
 */
   
-//Code Here
-
+let addTen = (numbers) => {
+for (let index = 0; index < numbers.length; index++) {
+  const element = numbers[index];
+  parseInt(element);
+  element += 10;
+}
+return numbers
+}
 
 
 ////////// PROBLEM 11 //////////
@@ -264,8 +272,14 @@ for(var i = 0; i < num2; i++){
   Return the array which is longest.
 */
 
-//Code Here
-
+let longer = (arr1, arr2) => {
+  if(arr1.length > arr2.length) {
+    return arr1;
+  }
+  else {
+    return arr2;
+  }
+}
 
 
 /*
@@ -276,7 +290,13 @@ for(var i = 0; i < num2; i++){
   Example: var arr1 = [1,2,3,4]; var arr2 = [2,4,5,6]; newArray // [2,4]
 */
 
-//Code Here
+let both = (arr1, arr2) => {
+  newArray = [];
+
+
+
+  return newArray;
+}
 
 
 
