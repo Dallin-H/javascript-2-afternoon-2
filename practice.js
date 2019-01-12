@@ -183,34 +183,22 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 let removeItem = (myGroceryList, item) => {
-  let newArray = [];
-  if (myGroceryList == true) {
-    for (let i = 0; i < myGroceryList.length; i++) {
-      if (myGroceryList[i] === item){
-
-      }
-    }
-  } 
-
-    else if (myGroceryList == false){
-      return newArray = [];
-    }
-    else if (item == false) {
-      return newArray = [];
-    }    
-    return newArray;
-  }
-
-  let addItem = (myGroceryList, item) => {
-    let newList = [];
-    if (myGroceryList == truth) {
-      myGroceryList.push(item)
-    }
-    else if (myGroceryList == false) {
-      return newList;
+  if ( item ) {
+    if (myGroceryList.includes(item)) {
+      myGroceryList.splice(0, 1)
     }
   }
+else { return myGroceryList = []}
+  return myGroceryList
+}
 
+let addItem = (myGroceryList, item) => {
+  if ( item ) {
+    myGroceryList.push(item)
+  }
+  else { myGroceryList = [] }
+  return myGroceryList
+}
 
 ////////// PROBLEM 9 //////////
 
@@ -242,13 +230,15 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 */
   
 let addTen = (numbers) => {
-for (let index = 0; index < numbers.length; index++) {
-  const element = numbers[index];
-  parseInt(element);
-  element += 10;
+  let newArray = []
+  for (let index = 0; index < numbers.length; index++) {
+    newArray.push(parseInt(numbers[index]))
+    newArray[index] += 10
+    
+  }
+  return newArray
 }
-return numbers
-}
+
 
 
 ////////// PROBLEM 11 //////////
@@ -291,10 +281,13 @@ let longer = (arr1, arr2) => {
 */
 
 let both = (arr1, arr2) => {
-  newArray = [];
-
-
-
+  let newArray = [];
+    for (let index = 0; index < arr1.length; index++) {
+      const element = arr1[index];
+          if (arr2.includes(element)) {
+      newArray.push(element)
+    }
+  }
   return newArray;
 }
 
@@ -336,17 +329,26 @@ var colt = {
   After that console.log the length of the Array and make sure that it's equal to 4. 
 */
 
-//Code Here
+devMountainEmployees.push(tyler)
+devMountainEmployees.push(cahlan)
+devMountainEmployees.push(ryan)
+devMountainEmployees.push(colt)
 
-
+console.log(devMountainEmployees)
 
 /*
   Now let's say Cahlan has a mental breakdown and has to take a leave of absence to 'find himself'.
   Loop through your devMountainEmployees until you find cahlan, then remove him from the array.
 */
 
-//Code Here
+for (let index = 0; index < devMountainEmployees.length; index++) {
+  let element = devMountainEmployees[index];
+  if (element === cahlan) {
+    devMountainEmployees.splice(index, 1)
+  }
+}
 
+console.log(devMountainEmployees)
 
 
 ////////// PROBLEM 13 //////////
@@ -357,8 +359,7 @@ var colt = {
   Create an empty array called users.
 */
 
-//Code Here
-
+let users = []
 
 
 /*
@@ -376,10 +377,25 @@ var user1 = {
 };
 // Do not edit the code above.
 
-//Code Here
+users.push(user1)
 
+let user2 = {
+  name: '',
+  email: '',
+  password: '',
+  username: ''
+}
 
+let user3 = {
+  name: '',
+  email: '',
+  password: '',
+  username: ''
+}
 
+users.push(user2, user3)
+
+console.log(users)
 /*
   Now you have a very common data structure. 
   Twitter is a good use case.
@@ -390,8 +406,12 @@ var user1 = {
   Once you find the particular index he's located in, delete him from the array.
 */
 
-//Code Here
-
+for (let i = 0; i < users.length; i++) {
+  const el = users[i];
+  if (el.email === 'tylermcginnis33@gmail.com') {
+    users.splice(i, 1)
+  }
+}
 
 
 /*
